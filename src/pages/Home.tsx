@@ -1,31 +1,112 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import bulb from "../icons/bulb.png"
 import cloud from "../icons/cloud.png";
 import mind from "../icons/mind.png";
 
 const Home = () => {
+    const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-slate-900">
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-4">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={ { opacity: 0, y: 20 } }
-            animate={ { opacity: 1, y: 0 } }
-            transition={ { duration: 0.8 } }
-            className="text-center"
-          >
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 glow-text">
-              Transform Your Digital Vision Into Reality
-            </h1>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              We craft innovative digital solutions that propel businesses into the future
-            </p>
-            <button className="cosmic-button">Get Started</button>
-          </motion.div>
+{/* Hero Section */}
+<div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
+  
+  {/* Animated background blobs */}
+  <div className="absolute inset-0">
+    <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
+    <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-purple-500/5 to-blue-500/5 rounded-full blur-3xl"></div>
+  </div>
+
+  {/* Grid Overlay */}
+<div className="absolute inset-0 bg-dots-grid opacity-30"></div>
+
+  {/* Main Content */}
+  <section className="relative z-10 pt-32 pb-16 px-4">
+    <div className="max-w-7xl mx-auto text-center transition-all duration-1000"
+      style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? "translateY(0)" : "translateY(2rem)" }}
+    >
+      {/* Availability Badge */}
+      <div className="inline-flex items-center px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full mb-8 group hover:bg-white/10 transition-all duration-300">
+        <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-ping"></div>
+        <span className="text-sm text-gray-300 group-hover:text-white transition-colors">
+          Available for new projects
+        </span>
+      </div>
+
+      {/* Headings */}
+      <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-tight">
+        <span className="bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent">
+          Transform Your
+        </span>
+        <br />
+        <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent animate-pulse">
+          Digital Vision
+        </span>
+        <br />
+        <span className="bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent">
+          Into Reality
+        </span>
+      </h1>
+
+      {/* Subtitle */}
+      <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto font-light leading-relaxed">
+        We craft innovative digital solutions that propel businesses into the future with cutting-edge technology and seamless user experiences.
+      </p>
+
+      {/* CTA Buttons */}
+      <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+        <button className="group relative px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full font-semibold text-white shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 hover:scale-105 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div className="relative flex items-center">
+            Get Started
+            <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </div>
+        </button>
+
+        <button className="group px-8 py-4 border border-white/20 rounded-full font-semibold text-white hover:bg-white/5 transition-all duration-300 hover:scale-105 backdrop-blur-sm">
+          <div className="flex items-center">
+            View Our Work
+            <svg className="w-5 h-5 ml-2 group-hover:rotate-45 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </div>
+        </button>
+      </div>
+
+      {/* Highlight Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300 group">
+          <div className="text-3xl font-bold text-purple-400 mb-2 group-hover:scale-110 transition-transform">500+</div>
+          <div className="text-gray-300">Projects Delivered</div>
         </div>
-      </section>
+        <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300 group">
+          <div className="text-3xl font-bold text-blue-400 mb-2 group-hover:scale-110 transition-transform">99%</div>
+          <div className="text-gray-300">Client Satisfaction</div>
+        </div>
+        <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300 group">
+          <div className="text-3xl font-bold text-pink-400 mb-2 group-hover:scale-110 transition-transform">24/7</div>
+          <div className="text-gray-300">Support Available</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Scroll Indicator */}
+  <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/60 animate-bounce">
+    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+    </svg>
+  </div>
+</div>
+
 
       {/* Services Section */}
       <section className="py-16 px-4">
@@ -44,7 +125,7 @@ const Home = () => {
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-[300px] object-cover rounded-lg shadow-glow"
+                    className="w-full h-[300px] object-cover rounded-lg "
                   />
                 </div>
                 <div className={`${index % 2 === 0 ? 'md:order-2' : 'md:order-1'} space-y-6`}>
