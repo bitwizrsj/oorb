@@ -1,7 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const Careers = () => {
+// Type for benefit icon component
+type IconProps = React.SVGProps<SVGSVGElement>;
+
+const Careers: React.FC = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
@@ -114,36 +117,42 @@ const Careers = () => {
   );
 };
 
-const benefits = [
+// BENEFITS DATA WITH PROPER TYPING
+const benefits: {
+  title: string;
+  description: string;
+  icon: (props: IconProps) => JSX.Element;
+}[] = [
   {
     title: "Innovation Culture",
     description: "Work on cutting-edge technologies and shape the future",
-    icon: () => (
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    icon: (props) => (
+      <svg {...props} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
       </svg>
-    )
+    ),
   },
   {
     title: "Growth & Learning",
     description: "Continuous learning opportunities and career development",
-    icon: () => (
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    icon: (props) => (
+      <svg {...props} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
       </svg>
-    )
+    ),
   },
   {
     title: "Work-Life Balance",
     description: "Flexible schedules and remote work options",
-    icon: () => (
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    icon: (props) => (
+      <svg {...props} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
-    )
-  }
+    ),
+  },
 ];
 
+// OPEN POSITIONS
 const positions = [
   {
     title: "Senior Full Stack Developer",
@@ -154,8 +163,8 @@ const positions = [
     requirements: [
       "5+ years of experience with modern web technologies",
       "Strong knowledge of React, Node.js, and TypeScript",
-      "Experience with cloud platforms (AWS/Azure/GCP)"
-    ]
+      "Experience with cloud platforms (AWS/Azure/GCP)",
+    ],
   },
   {
     title: "AI/ML Engineer",
@@ -166,8 +175,8 @@ const positions = [
     requirements: [
       "MS/PhD in Computer Science or related field",
       "Experience with TensorFlow or PyTorch",
-      "Strong background in mathematics and statistics"
-    ]
+      "Strong background in mathematics and statistics",
+    ],
   },
   {
     title: "Product Designer",
@@ -178,16 +187,17 @@ const positions = [
     requirements: [
       "3+ years of product design experience",
       "Strong portfolio showcasing UX/UI work",
-      "Experience with design systems and tools"
-    ]
-  }
+      "Experience with design systems and tools",
+    ],
+  },
 ];
 
+// CULTURE IMAGES
 const cultureImages = [
   "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3",
   "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3",
   "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3",
-  "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3"
+  "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3",
 ];
 
 export default Careers;

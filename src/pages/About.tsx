@@ -1,7 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const About = () => {
+type IconProps = React.SVGProps<SVGSVGElement>;
+
+const About: React.FC = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
@@ -108,61 +110,67 @@ const About = () => {
   );
 };
 
-const values = [
+// VALUES WITH PROPER TYPES
+const values: {
+  title: string;
+  description: string;
+  icon: (props: IconProps) => JSX.Element;
+}[] = [
   {
     title: "Innovation",
     description: "Constantly pushing boundaries and embracing new technologies",
-    icon: () => (
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    icon: (props) => (
+      <svg {...props} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
       </svg>
-    )
+    ),
   },
   {
     title: "Excellence",
     description: "Delivering the highest quality in everything we do",
-    icon: () => (
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    icon: (props) => (
+      <svg {...props} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
       </svg>
-    )
+    ),
   },
   {
     title: "Collaboration",
     description: "Working together to achieve extraordinary results",
-    icon: () => (
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    icon: (props) => (
+      <svg {...props} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
       </svg>
-    )
-  }
+    ),
+  },
 ];
 
+// TEAM DATA WITH PROPER TYPING (optional, kept as-is because it's already type-safe enough)
 const team = [
   {
     name: "Sarah Johnson",
     position: "CEO",
     image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3",
-    bio: "20+ years of technology leadership experience"
+    bio: "20+ years of technology leadership experience",
   },
   {
     name: "Michael Chen",
     position: "CTO",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3",
-    bio: "Expert in AI and cloud technologies"
+    bio: "Expert in AI and cloud technologies",
   },
   {
     name: "Emily Rodriguez",
     position: "COO",
     image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3",
-    bio: "Operational excellence and strategy specialist"
+    bio: "Operational excellence and strategy specialist",
   },
   {
     name: "David Kim",
     position: "Head of Innovation",
     image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3",
-    bio: "Leading breakthrough technology initiatives"
-  }
+    bio: "Leading breakthrough technology initiatives",
+  },
 ];
 
 export default About;
