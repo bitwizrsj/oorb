@@ -5,7 +5,7 @@ type IconProps = React.SVGProps<SVGSVGElement>;
 
 const About: React.FC = () => {
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen pt-20 bg-black">
       {/* Hero Section */}
       <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
@@ -26,7 +26,7 @@ const About: React.FC = () => {
       </section>
 
       {/* Vision & Mission */}
-      <section className="py-16 px-4 cosmic-gradient">
+      <section className="py-16 px-4 bg-white/5">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
           <motion.div
             initial={{ opacity: 0, x: -20 }}

@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import logo from '../../images/logo.png'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
+    { name: 'Home', path: '/' },
     { name: 'Solutions', path: '/solutions' },
     { name: 'Products', path: '/products' },
     { name: 'About', path: '/about' },
@@ -14,10 +16,11 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed w-full z-50 bg-navy bg-opacity-90 backdrop-blur-lg">
+    <nav className="fixed w-full z-50 bg-black bg-opacity-90 backdrop-blur-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center">
+          <img src={logo} className='h-8'></img>
             <span className="text-2xl font-orbitron font-bold glow-text">OORB</span>
           </Link>
 

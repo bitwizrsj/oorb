@@ -11,10 +11,10 @@ const Home = () => {
     setIsVisible(true);
   }, []);
   return (
-    <div className="min-h-screen bg-slate-900">
+    <div className="min-h-screen bg-black">
       {/* Hero Section */}
 {/* Hero Section */}
-<div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
+<div className="min-h-screen  relative overflow-hidden">
   
   {/* Animated background blobs */}
   <div className="absolute inset-0">
@@ -42,20 +42,20 @@ const Home = () => {
       {/* Headings */}
       <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-tight">
         <span className="bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent">
-          Transform Your
+          Transform Your 
         </span>
         <br />
-        <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent animate-pulse">
-          Digital Vision
+        <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text ">
+          Ideas Into
         </span>
         <br />
         <span className="bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent">
-          Into Reality
+          Digital Vision
         </span>
       </h1>
 
       {/* Subtitle */}
-      <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto font-light leading-relaxed">
+      <p className="text-sm md:text-xl text-gray-300 mb-12 max-w-3xl mx-auto font-light leading-relaxed">
         We craft innovative digital solutions that propel businesses into the future with cutting-edge technology and seamless user experiences.
       </p>
 
@@ -83,15 +83,15 @@ const Home = () => {
 
       {/* Highlight Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-        <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300 group">
-          <div className="text-3xl font-bold text-purple-400 mb-2 group-hover:scale-110 transition-transform">500+</div>
+        <div className="text-center p-6 bg-/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300 group">
+          <div className="text-yellow-400 text-3xl font-bold mb-2 group-hover:scale-110 transition-transform">500+</div>
           <div className="text-gray-300">Projects Delivered</div>
         </div>
-        <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300 group">
+        <div className="text-center p-6 bg-/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300 group">
           <div className="text-3xl font-bold text-blue-400 mb-2 group-hover:scale-110 transition-transform">99%</div>
           <div className="text-gray-300">Client Satisfaction</div>
         </div>
-        <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300 group">
+        <div className="text-center p-6 bg-/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300 group">
           <div className="text-3xl font-bold text-pink-400 mb-2 group-hover:scale-110 transition-transform">24/7</div>
           <div className="text-gray-300">Support Available</div>
         </div>
@@ -148,7 +148,7 @@ const Home = () => {
                         initial={ { opacity: 0, x: -10 } }
                         animate={ { opacity: 1, x: 0 } }
                         transition={ { delay: i * 0.1 } }
-                        className="orbit-card p-4"
+                        className="orbit-card p-4 bg-white/5 border-white/10"
                       >
                         <h4 className="font-bold mb-2">{subService.title}</h4>
                         <p className="text-sm text-gray-300">{subService.description}</p>
@@ -162,44 +162,27 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 px-4 cosmic-gradient">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={ { opacity: 0 } }
-                animate={ { opacity: 1 } }
-                transition={ { duration: 0.5, delay: index * 0.1 } }
-              >
-                <div className="text-4xl font-bold mb-2">{stat.value}</div>
-                <div className="text-gray-300">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* Featured Projects */}
       <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12 glow-text">Featured Projects</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {projects.map((project, index) => (
               <motion.div
                 key={project.title}
                 initial={ { opacity: 0, scale: 0.95 } }
                 animate={ { opacity: 1, scale: 1 } }
                 transition={ { duration: 0.5, delay: index * 0.1 } }
-                className="orbit-card overflow-hidden"
+                className="orbit-card overflow-hidden bg-white/5"
               >
                 <img 
                   src={project.image} 
                   alt={project.title}
                   className="w-full h-48 object-cover"
                 />
-                <div className="p-6">
+                <div className="p-6 ">
                   <h3 className="text-xl font-bold mb-2">{project.title}</h3>
                   <p className="text-gray-300 mb-4">{project.description}</p>
                   <button className="cosmic-button">Learn More</button>

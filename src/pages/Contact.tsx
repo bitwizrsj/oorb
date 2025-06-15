@@ -4,7 +4,7 @@ import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 
 const Contact = () => {
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen pt-20 bg-black">
       {/* Hero Section */}
       <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto">

@@ -6,7 +6,7 @@ type IconProps = React.SVGProps<SVGSVGElement>;
 
 const Careers: React.FC = () => {
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen pt-20 bg-black">
       {/* Hero Section */}
       <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
@@ -27,7 +27,7 @@ const Careers: React.FC = () => {
       </section>
 
       {/* Why Join Us */}
-      <section className="py-16 px-4 cosmic-gradient">
+      <section className="py-16 px-4 bg-white/5">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Why Join OORB?</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -91,7 +91,7 @@ const Careers: React.FC = () => {
       </section>
 
       {/* Culture Section */}
-      <section className="py-16 px-4 cosmic-gradient">
+      <section className="py-16 px-4 bg-white/5">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-8">Life at OORB</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

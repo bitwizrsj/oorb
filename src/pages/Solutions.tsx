@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const Solutions = () => {
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen pt-20 bg-black">
       {/* Hero Section */}
       <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
@@ -39,7 +39,7 @@ const Solutions = () => {
                   <img
                     src={solution.image}
                     alt={solution.title}
-                    className="w-full h-[300px] object-cover rounded-lg shadow-glow"
+                    className="w-full h-[300px] object-cover rounded-lg border"
                   />
                 </div>
                 <div className={`${index % 2 === 0 ? 'md:order-2' : 'md:order-1'} space-y-6`}>
@@ -57,7 +57,7 @@ const Solutions = () => {
                         initial={ { opacity: 0, x: -10 } }
                         animate={ { opacity: 1, x: 0 } }
                         transition={ { delay: i * 0.1 } }
-                        className="orbit-card p-4"
+                        className="orbit-card p-4 bg-white/5"
                       >
                         <h4 className="font-bold mb-2">{feature.title}</h4>
                         <p className="text-sm text-gray-300">{feature.description}</p>
@@ -72,7 +72,7 @@ const Solutions = () => {
       </section>
 
       {/* Case Studies */}
-      <section className="py-16 px-4 cosmic-gradient">
+      <section className="py-16 px-4 bg-white/5">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Success Stories</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

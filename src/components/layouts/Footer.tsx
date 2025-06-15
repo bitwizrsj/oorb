@@ -4,7 +4,7 @@ import { Mail, Phone, MapPin, Linkedin, Twitter, Github } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-navy bg-opacity-90 pt-16 pb-8">
+    <footer className="bg-black bg-opacity-90 pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>

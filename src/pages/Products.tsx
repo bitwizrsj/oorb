@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 
 const Products = () => {
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen pt-20 bg-black">
       {/* Hero Section */}
-      <section className="py-16 px-4">
+      <section className="py-16 px-4 bg-black">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -64,7 +64,7 @@ const Products = () => {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-16 px-4 cosmic-gradient">
+      <section className="py-16 px-4 bg-white/5">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Flexible Pricing</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
