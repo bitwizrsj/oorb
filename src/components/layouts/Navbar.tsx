@@ -16,12 +16,12 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed w-full z-50 bg-black bg-opacity-90 backdrop-blur-lg">
+    <nav className="fixed w-full z-50 bg-white bg-opacity-95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          <Link to="/" className="flex items-center">
-          <img src={logo} className='h-8'></img>
-            <span className="text-2xl font-orbitron font-bold glow-text">OORB</span>
+        <div className="flex items-center justify-between h-16">
+          <Link to="/" className="flex items-center space-x-2">
+            <img src={logo} className='h-6' alt="OORB Logo" />
+            <span className="text-xl font-semibold text-gray-900 tracking-tight">OORB</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -30,9 +30,10 @@ const Navbar = () => {
               <Link
                 key={link.name}
                 to={link.path}
-                className="font-orbitron text-sm hover:text-purple transition-colors"
+                className="text-gray-600 hover:text-blue-600 text-sm font-medium transition-colors duration-200 relative group"
               >
                 {link.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-200 group-hover:w-full"></span>
               </Link>
             ))}
           </div>
@@ -41,22 +42,22 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-white hover:text-purple"
+              className="text-gray-600 hover:text-blue-600 p-2 rounded-md hover:bg-gray-100 transition-colors duration-200"
             >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              {isOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
         </div>
 
         {/* Mobile Navigation Menu */}
         {isOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <div className="md:hidden border-t border-gray-200 bg-white">
+            <div className="px-2 pt-2 pb-3 space-y-1">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   to={link.path}
-                  className="block px-3 py-2 rounded-md text-base font-orbitron hover:text-purple transition-colors"
+                  className="block px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-blue-600 hover:bg-gray-50 transition-colors duration-200"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.name}
