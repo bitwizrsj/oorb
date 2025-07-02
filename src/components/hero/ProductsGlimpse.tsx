@@ -1,17 +1,5 @@
 import React, { useState } from 'react';
-import {
-  Brain,
-  Code,
-  Database,
-  Cloud,
-  ArrowRight,
-  Play,
-  Zap,
-  Globe,
-  Shield,
-  BarChart3,
-  LucideIcon
-} from 'lucide-react';
+import { Brain, Code, Database, Cloud, ArrowRight, Play, Zap, Globe, Shield, BarChart3, DivideIcon as LucideIcon } from 'lucide-react';
 
 type PreviewType = 'code' | 'ui' | 'dashboard' | 'monitoring';
 
@@ -160,24 +148,25 @@ const ProductsGlimpse: React.FC = () => {
   const colors = colorClasses[activeProductData.color];
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-16 sm:py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 sm:mb-16">
           <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-sm font-medium mb-6">
             <Zap className="w-4 h-4 mr-2" />
             Our Products
           </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-gray-900 mb-6 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-light text-gray-900 mb-4 sm:mb-6 tracking-tight">
             A Glimpse of Our <span className="text-blue-500">Products</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light leading-relaxed">
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto font-light leading-relaxed">
             Discover the tools and platforms that power innovation for companies worldwide.
           </p>
         </div>
 
         {/* Grid */}
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+
           {/* Navigation */}
           <div className="lg:col-span-1 space-y-4">
             {products.map((product) => {
@@ -189,35 +178,35 @@ const ProductsGlimpse: React.FC = () => {
                 <button
                   key={product.id}
                   onClick={() => setActiveProduct(product.id)}
-                  className={`w-full text-left p-6 rounded-2xl transition-all duration-300 group ${
+                  className={`w-full text-left p-4 sm:p-6 rounded-xl transition-all duration-300 group ${
                     isActive
                       ? `bg-white shadow-lg ${productColors.border} border-2`
                       : 'bg-white hover:shadow-md border-2 border-transparent hover:border-gray-200'
                   }`}
                 >
-                  <div className="flex items-start space-x-4">
+                  <div className="flex items-start space-x-3 sm:space-x-4">
                     <div
-                      className={`w-12 h-12 rounded-xl flex items-center justify-center ${
+                      className={`w-10 h-10 sm:w-12 sm:h-12 rounded-sm flex items-center justify-center ${
                         isActive ? productColors.bg : 'bg-gray-100 group-hover:bg-gray-200'
                       }`}
                     >
                       <Icon
-                        className={`w-6 h-6 ${
+                        className={`w-5 h-5 sm:w-6 sm:h-6 ${
                           isActive ? productColors.text : 'text-gray-600'
                         }`}
                       />
                     </div>
                     <div className="flex-1 min-w-0">
                       <h3
-                        className={`font-semibold text-lg ${
+                        className={`font-semibold text-base sm:text-lg ${
                           isActive ? 'text-gray-900' : 'text-gray-700 group-hover:text-gray-900'
                         }`}
                       >
                         {product.name}
                       </h3>
-                      <p className="text-sm text-gray-500 mb-1">{product.category}</p>
+                      <p className="text-xs sm:text-sm text-gray-500 mb-1">{product.category}</p>
                       <p
-                        className={`text-sm font-medium ${
+                        className={`text-xs sm:text-sm font-medium ${
                           isActive ? productColors.text : 'text-gray-600'
                         }`}
                       >
@@ -239,27 +228,27 @@ const ProductsGlimpse: React.FC = () => {
 
           {/* Details */}
           <div className="lg:col-span-2">
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-              <div className="p-8 border-b border-gray-100">
-                <h3 className="text-3xl font-semibold text-gray-900 mb-2">
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+              <div className="p-6 sm:p-8 border-b border-gray-100">
+                <h3 className="text-2xl sm:text-3xl font-semibold text-gray-900 mb-2">
                   {activeProductData.name}
                 </h3>
-                <p className="text-gray-600 text-lg leading-relaxed mb-4">
+                <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-4">
                   {activeProductData.description}
                 </p>
-                <div className="flex items-center space-x-4 mb-6">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 mb-6">
                   <button
-                    className={`inline-flex items-center px-6 py-3 ${colors.button} text-white font-medium rounded-xl transition-colors`}
+                    className={`inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 ${colors.button} text-white font-medium rounded-sm transition-colors`}
                   >
                     <Play className="w-4 h-4 mr-2" />
                     View Demo
                   </button>
-                  <button className="inline-flex items-center px-6 py-3 bg-gray-100 text-gray-700 font-medium rounded-xl hover:bg-gray-200 transition-colors">
+                  <button className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-gray-100 text-gray-700 font-medium rounded-sm hover:bg-gray-200 transition-colors">
                     Learn More <ArrowRight className="w-4 h-4 ml-2" />
                   </button>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   {activeProductData.features.map((feature, index) => (
                     <div key={index} className="flex items-center space-x-3">
                       <div
@@ -271,7 +260,7 @@ const ProductsGlimpse: React.FC = () => {
                 </div>
               </div>
 
-              <div className="p-8 bg-gray-50">
+              <div className="p-6 sm:p-8 bg-gray-50">
                 <div className="flex items-center justify-between mb-6">
                   <h4 className="text-lg font-semibold text-gray-900">Live Preview</h4>
                   <div className="flex items-center space-x-2">
@@ -281,15 +270,15 @@ const ProductsGlimpse: React.FC = () => {
                 </div>
 
                 {activeProductData.preview.type === 'code' ? (
-                  <div className="bg-gray-900 rounded-xl p-6 overflow-x-auto">
-                    <pre className="text-green-400 text-sm font-mono leading-relaxed">
+                  <div className="bg-gray-900 rounded-sm p-4 sm:p-6 overflow-x-auto">
+                    <pre className="text-green-400 text-xs sm:text-sm font-mono leading-relaxed">
                       <code>{activeProductData.preview.content}</code>
                     </pre>
                   </div>
                 ) : (
-                  <div className="bg-white rounded-xl p-6 border-2 border-dashed border-gray-200 text-center">
-                    <div className="w-16 h-16 bg-gray-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                      <Globe className="w-8 h-8 text-gray-400" />
+                  <div className="bg-white rounded-sm p-4 sm:p-6 border-2 border-dashed border-gray-200 text-center">
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gray-100 rounded-sm flex items-center justify-center mx-auto mb-4">
+                      <Globe className="w-6 h-6 sm:w-8 sm:h-8 text-gray-400" />
                     </div>
                     <p className="text-gray-600 font-medium mb-2">Interactive Demo</p>
                     <p className="text-sm text-gray-500">{activeProductData.preview.content}</p>
@@ -301,18 +290,20 @@ const ProductsGlimpse: React.FC = () => {
         </div>
 
         {/* CTA Footer */}
-        <div className="text-center mt-16">
-          <div className="inline-flex items-center space-x-4 bg-white rounded-2xl p-6 shadow-lg">
-            <div className="flex items-center space-x-2">
-              <Shield className="w-5 h-5 text-green-500" />
-              <span className="text-sm font-medium text-gray-700">Enterprise Ready</span>
+        <div className="text-center mt-12 sm:mt-16">
+          <div className="inline-flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4 bg-white rounded-xl p-4 sm:p-6 shadow-lg">
+            <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4">
+              <div className="flex items-center space-x-2">
+                <Shield className="w-5 h-5 text-green-500" />
+                <span className="text-sm font-medium text-gray-700">Enterprise Ready</span>
+              </div>
+              <div className="hidden sm:block w-px h-6 bg-gray-200"></div>
+              <div className="flex items-center space-x-2">
+                <Globe className="w-5 h-5 text-blue-500" />
+                <span className="text-sm font-medium text-gray-700">Global Scale</span>
+              </div>
             </div>
-            <div className="w-px h-6 bg-gray-200"></div>
-            <div className="flex items-center space-x-2">
-              <Globe className="w-5 h-5 text-blue-500" />
-              <span className="text-sm font-medium text-gray-700">Global Scale</span>
-            </div>
-            <div className="w-px h-6 bg-gray-200"></div>
+            <div className="hidden sm:block w-px h-6 bg-gray-200"></div>
             <button className="inline-flex items-center text-blue-500 font-medium hover:text-blue-600 transition-colors">
               Explore All Products
               <ArrowRight className="w-4 h-4 ml-2" />

@@ -56,12 +56,12 @@ const CompanyTrustSection: React.FC = () => {
   }, []);
 
   const companies: Company[] = [
-    { name: 'theo', type: 'signature' },
-    { name: 'KOBE', type: 'kobe' },
-    { name: 'Terra', type: 'terra' },
-    { name: 'Tokyo', type: 'tokyo' },
-    { name: 'hues', type: 'hues' },
-    { name: 'Hitech', type: 'hitech' }
+    { name: 'Hypernex', type: 'signature' },
+    { name: 'Zanvionics', type: 'kobe' },
+    { name: 'BMS', type: 'terra' },
+    { name: 'LDPS', type: 'tokyo' },
+    { name: 'Xyphramin', type: 'hues' },
+    { name: 'KKAP', type: 'hitech' }
   ];
 
   const renderAnimatedLine = (text: string, fillPercent: number, key: number) => (
@@ -133,15 +133,15 @@ const CompanyLogo: React.FC<CompanyLogoProps> = ({ company }) => {
   const renderIcon = (): React.ReactNode => {
     switch (type) {
       case 'kobe':
-        return <span className="text-lg">市</span>;
+        return <span className="text-lg"></span>;
       case 'terra':
-        return <div className="w-4 h-4 bg-gray-800 rounded-sm" />;
+        return <div className="" />;
       case 'tokyo':
-        return <div className="w-2.5 h-2.5 bg-black rounded-full" />;
+        return <div className="" />;
       case 'hues':
-        return <div className="w-4 h-4 bg-gray-800 rounded-full" />;
+        return <div className="" />;
       case 'hitech':
-        return <div className="w-4 h-4 bg-gray-800 rounded-sm" />;
+        return <div className="" />;
       default:
         return null;
     }

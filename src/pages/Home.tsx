@@ -4,32 +4,24 @@ import ProductsGlimpse from "../components/hero/ProductsGlimpse";
 import StatsSection from "../components/hero/StatsSection";
 import TopWebsitesSection from "../components/hero/TopWebsitesSection";
 import ServicesSection from '../components/hero/ServicesSection';
+import TestimonialsSection from '../components/hero/TestimonialsSection';
+import ContactSection from '../components/hero/ContactSection';
+import JoinSection from '../components/hero/JoinSection';
 
-const App = () => {
+const Home = () => {
   return (
     <div className="min-h-screen bg-white">
       <HeroSection />
       <CompanyTrustSection />
-    <ServicesSection />
+      <ServicesSection />
       <StatsSection />
       <ProductsGlimpse />
+      <TestimonialsSection />
       <TopWebsitesSection />
-
-      <div className='min-h-screen'></div>
-      <main>
-        {/* <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/solutions" element={<Solutions />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/careers" element={<Careers />} />
-        </Routes> */}
-      </main>
-      {/* <Footer /> */}
+      <ContactSection />
+      <JoinSection />
     </div>
   );
 };
 
-export default App;
-
+export default Home;

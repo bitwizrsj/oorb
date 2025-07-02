@@ -19,7 +19,7 @@ const StatsSection = () => {
     },
     {
       number: 50,
-      suffix: 'M+',
+      suffix: 'K+',
       label: 'API calls',
       description: 'Processed monthly'
     },

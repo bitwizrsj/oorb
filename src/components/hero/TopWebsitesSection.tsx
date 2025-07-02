@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Award } from 'lucide-react';
 import { projects } from '../../data/projects';
 import Card from '../Card';
-import './TopWebsitesSection.css'; // Adjust the path as necessary
+import './TopWebsitesSection.css';
 import Home from '../../Home';
 
 const TopWebsitesSection = () => {
@@ -41,35 +41,33 @@ const TopWebsitesSection = () => {
         }
     ];
 
-
-
     return (
-        <section
-            className=" bg-black"
-        >
+        <section className="bg-black">
             {/* Sticky Header - Only within section */}
             <div className="sticky top-0 z-50 bg-black/95 backdrop-blur-sm border-b border-white/10">
-                <div className="max-w-7xl mx-auto px-6 py-6">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-6">
                     <div className="flex items-center gap-3">
-                        <Award className="w-5 h-5 text-white" />
-                        <h2 className="text-white font-bold text-lg tracking-wider uppercase">
+                        <Award className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                        <h2 className="text-white font-bold text-base sm:text-lg tracking-wider uppercase">
                             TOP WEBSITES
                         </h2>
                     </div>
                 </div>
             </div>
 
-            {/* Dynamic cursor follower */}
+            {/* Dynamic cursor follower - Hidden on mobile */}
             <div
-                className="fixed w-3 h-3 bg-white/50 pointer-events-none z-40 transition-transform duration-100 ease-out"
+                className="fixed w-3 h-3 bg-white/50 pointer-events-none z-40 transition-transform duration-100 ease-out hidden sm:block"
                 style={{
                     left: `${mousePosition.x - 6}px`,
                     top: `${mousePosition.y - 6}px`,
                     opacity: 0.4
                 }}
             ></div>
-<Home />
             
+            <div className="min-h-screen">
+                <Home />
+            </div>
         </section>
     );
 };

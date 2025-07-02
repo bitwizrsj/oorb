@@ -7,35 +7,35 @@ const HeroSection = () => {
     <section className="relative bg-white pt-16" style={{ minHeight: 'calc(100vh - 64px)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center" style={{ minHeight: 'calc(100vh - 64px)' }}>
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center w-full">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-20 items-center w-full">
             {/* Left Content */}
             <div className="order-2 lg:order-1 animate-fade-in-up">
               {/* Eyebrow Text */}
-              <p className="text-sm font-medium text-gray-600 mb-6 tracking-wide opacity-0 animate-fade-in delay-300">
+              <p className="text-sm font-medium text-gray-600 mb-4 sm:mb-6 tracking-wide opacity-0 animate-fade-in delay-300">
                 Innovation • Development • Impact
               </p>
 
               {/* Main Headline */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-gray-900 leading-tight mb-6 tracking-tight opacity-0 animate-fade-in delay-500">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-gray-900 leading-tight mb-4 sm:mb-6 tracking-tight opacity-0 animate-fade-in delay-500">
                 Building{' '}
                 <span className="text-blue-600">Tools</span>{' '}
                 for Tomorrow.
               </h1>
 
               {/* Subheading */}
-              <p className="text-lg sm:text-xl text-gray-600 mb-10 leading-relaxed font-medium max-w-xl opacity-0 animate-fade-in delay-700">
+              <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-8 sm:mb-10 leading-relaxed font-medium max-w-xl opacity-0 animate-fade-in delay-700">
                 From AI-powered platforms to developer-friendly services — OORB is where innovation meets impact.
               </p>
 
               {/* CTA Buttons */}
               <div className="space-y-4 opacity-0 animate-fade-in delay-1000">
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="group inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors duration-200 shadow-sm">
+                  <button className="group inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors duration-200 shadow-sm">
                     Explore our products
                     <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-0.5" />
                   </button>
                   
-                  <button className="group inline-flex items-center justify-center px-8 py-4 border border-gray-300 text-gray-700 font-semibold text-sm hover:border-gray-400 hover:bg-gray-50 transition-all duration-200">
+                  <button className="group inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 border border-gray-300 text-gray-700 font-semibold text-sm hover:border-gray-400 hover:bg-gray-50 transition-all duration-200">
                     Join our mission
                     <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-0.5" />
                   </button>
@@ -54,7 +54,7 @@ const HeroSection = () => {
 
             {/* Right Image */}
             <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
-              <div className="relative max-w-md lg:max-w-lg xl:max-w-xl">
+              <div className="relative max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl w-full">
                 <img 
                   src={orb}
                   alt="Global Innovation Network"
@@ -64,14 +64,14 @@ const HeroSection = () => {
                     backgroundSize: 'contain',
                     backgroundRepeat: 'no-repeat',
                     backgroundPosition: 'center',
-                    minHeight: '400px'
+                    minHeight: '300px'
                   }}
                 />
                 
                 {/* Subtle floating elements */}
-                <div className="absolute top-1/4 -left-4 w-8 h-8 bg-blue-100 rounded-full opacity-60 animate-pulse"></div>
-                <div className="absolute bottom-1/3 -right-4 w-6 h-6 bg-blue-200 rounded-full opacity-40 animate-pulse delay-1000"></div>
-                <div className="absolute top-1/2 -right-8 w-4 h-4 bg-blue-300 rounded-full opacity-30 animate-pulse delay-2000"></div>
+                <div className="absolute top-1/4 -left-2 sm:-left-4 w-6 h-6 sm:w-8 sm:h-8 bg-blue-100 rounded-full opacity-60 animate-pulse"></div>
+                <div className="absolute bottom-1/3 -right-2 sm:-right-4 w-4 h-4 sm:w-6 sm:h-6 bg-blue-200 rounded-full opacity-40 animate-pulse delay-1000"></div>
+                <div className="absolute top-1/2 -right-4 sm:-right-8 w-3 h-3 sm:w-4 sm:h-4 bg-blue-300 rounded-full opacity-30 animate-pulse delay-2000"></div>
               </div>
             </div>
           </div>

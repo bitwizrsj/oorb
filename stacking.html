@@ -1,68 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stacking Cards Scrolling Effect</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Scroll-Based Product Animation</title>
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell;
+      font-family: Arial, sans-serif;
       background-color: #f0f0f0;
       color: #333;
       overflow-x: hidden;
     }
-    .header, footer {
-      background-color: #001627;
-      color: white;
-      height: 200px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 2rem;
+
+    .container {
+      position: relative;
     }
-    .cards-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      scroll-snap-type: y mandatory;
-      height: 100vh;
-      overflow-y: scroll;
-    }
-    .card {
+
+    .product-sticky {
       position: sticky;
-      top: 0;
-      width: 90vw;
-      height: 90vh;
-      margin: 5vh 0;
-      background: rgba(20, 50, 100, 0.8);
-      color: white;
+      top: 100px;
+      width: 300px;
+      height: 300px;
+      z-index: 10;
+      transition: transform 1s ease;
+      margin: 0 auto;
+    }
+
+    .product-sticky img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    section {
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
       font-size: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      scroll-snap-align: start;
-      transition: transform 0.3s ease-in-out;
+      position: relative;
     }
-    .card:hover {
-      transform: scale(1.05);
-    }
+
+    .section-1 { background-color: #e6f7ff; }
+    .section-2 { background-color: #ffe6f7; }
+    .section-3 { background-color: #f7ffe6; }
+    .section-4 { background-color: #fff0e6; }
   </style>
 </head>
 <body>
-  <div class="header">Header</div>
-  <div class="cards-container">
-    <div class="card">Card 1</div>
-    <div class="card">Card 2</div>
-    <div class="card">Card 3</div>
-    <div class="card">Card 4</div>
+  <div class="container">
+    <div class="product-sticky" id="product">
+      <img src="./image.png" alt="Product" />
+    </div>
+
+    <section class="section-1">Scroll to Move Product</section>
+    <section class="section-2">Moving Right</section>
+    <section class="section-3">Moving Bottom Left</section>
+    <section class="section-4">Back to Center</section>
   </div>
-  <div class="footer">Footer</div>
+
+  <script>
+    const product = document.getElementById('product');
+    const sections = document.querySelectorAll('section');
+
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+
+      // Get position of each section
+      const section2Top = sections[1].offsetTop;
+      const section3Top = sections[2].offsetTop;
+      const section4Top = sections[3].offsetTop;
+
+      if (scrollY < section2Top - windowHeight / 2) {
+        // Section 1
+        product.style.transform = 'translate(0, 0)';
+      } else if (scrollY >= section2Top - windowHeight / 2 && scrollY < section3Top - windowHeight / 2) {
+        // Section 2
+        product.style.transform = 'translateX(200px)';
+      } else if (scrollY >= section3Top - windowHeight / 2 && scrollY < section4Top - windowHeight / 2) {
+        // Section 3
+        product.style.transform = 'translate(-150px, 150px)';
+      } else {
+        // Section 4
+        product.style.transform = 'translate(0, 0)';
+      }
+    });
+  </script>
 </body>
 </html>
