@@ -113,6 +113,14 @@ const Products = () => {
     orange: 'text-orange-600 bg-orange-50 border-orange-200'
   };
 
+  const bgColorDots: Record<string, string> = {
+  blue: 'bg-blue-500',
+  purple: 'bg-purple-500',
+  emerald: 'bg-emerald-500',
+  orange: 'bg-orange-500',
+};
+
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -158,7 +166,7 @@ const Products = () => {
             {/* Product Info */}
             <div>
               <div className="flex items-center space-x-4 mb-6">
-                <div className={`w-16 h-16 rounded-xl flex items-center justify-center ${colorClasses[activeProduct.color]}`}>
+<div className={`w-2 h-2 rounded-full ${bgColorDots[activeProduct.color]}`}>
                   <IconComponent className="w-8 h-8" />
                 </div>
                 <div>
@@ -256,7 +264,7 @@ const Products = () => {
               const Icon = product.icon;
               return (
                 <div key={product.id} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow duration-300">
-                  <div className={`w-12 h-12 rounded-sm flex items-center justify-center mb-4 ${colorClasses[product.color]}`}>
+<div className={`w-2 h-2 rounded-full ${bgColorDots[activeProduct.color]}`}>
                     <Icon className="w-6 h-6" />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">

@@ -2,10 +2,8 @@ import React from 'react';
 import './style.scss';
 
 interface CardProps {
-  title: string;
-  description: string;
   src: string;
-  url: string;
+  link: string;
   color: string;
   i: number;
 }

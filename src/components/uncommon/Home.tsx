@@ -1,12 +1,12 @@
 import React from 'react';
 import './Home.css';
-import { projects } from './data/projects';
-import Card from './components/Card';
+import { projects, Project } from '../../data/projects';
+import Card from './Card';
 
-const Home = () => {
+const Home: React.FC = () => {
   return (
     <main className="main">
-      {projects.map((project, i) => (
+      {projects.map((project: Project, i: number) => (
         <Card key={`p_${i}`} {...project} i={i} />
       ))}
     </main>

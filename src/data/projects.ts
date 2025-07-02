@@ -1,6 +1,14 @@
-// src/data/projects.js
+// src/data/projects.ts
 
-export const projects = [
+export type Project = {
+  title: string;
+  description: string;
+  src: string;
+  link: string;
+  color: string;
+};
+
+export const projects: Project[] = [
   {
     title: "Matthias Leidinger",
     description:
@@ -26,4 +34,3 @@ export const projects = [
     color: "#C2491D"
   }
 ];
-

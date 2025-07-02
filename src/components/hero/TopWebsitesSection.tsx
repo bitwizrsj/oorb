@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Award } from 'lucide-react';
-import { projects } from '../../data/projects';
-import Card from '../Card';
 import './TopWebsitesSection.css';
-import Home from '../../Home';
+import Home from '../uncommon/Home';
 
 const TopWebsitesSection = () => {
     const [scrollY, setScrollY] = useState(0);

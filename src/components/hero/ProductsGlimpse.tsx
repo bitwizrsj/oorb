@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { Brain, Code, Database, Cloud, ArrowRight, Play, Zap, Globe, Shield, BarChart3, DivideIcon as LucideIcon } from 'lucide-react';
+import { Brain, Code, Database, Cloud, ArrowRight, Play, Zap, Globe, Shield, BarChart3 } from 'lucide-react';
+import { LucideIcon } from 'lucide-react';
+
 
 type PreviewType = 'code' | 'ui' | 'dashboard' | 'monitoring';
 
