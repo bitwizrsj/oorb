@@ -5,6 +5,9 @@ import orb from "../../asset/e204f5f4-4db0-475e-ab72-e65a26bd4be2_removalai_prev
 const HeroSection = () => {
   return (
     <section className="relative bg-white pt-16" style={{ minHeight: 'calc(100vh - 64px)' }}>
+      {/* Decorative Quarter Circle at Top-Left */}
+<div className="absolute -top-24 -left-24 w-72 h-72 bg-blue-200 rounded-full opacity-30 z-0" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center" style={{ minHeight: 'calc(100vh - 64px)' }}>
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-20 items-center w-full">
