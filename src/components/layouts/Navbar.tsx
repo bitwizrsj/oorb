@@ -36,29 +36,24 @@ const navigationData: Record<'solutions' | 'products', DropdownData> = {
         title: 'Categories',
         filters: [
           { name: 'Management Tools', filter: 'management' },
-          { name: 'HR Tools', filter: 'hr' },
-          { name: 'Custom ERP', filter: 'erp' }
+          // { name: 'HR Tools', filter: 'hr' },
+          // { name: 'Custom ERP', filter: 'erp' }
+          { name: 'ecommerce', filter: 'ecommerce' }
         ]
       }
     ],
     featured: [
       {
         name: 'School ERP',
-        link: '/solutions/school-erp',
+        link: 'https://s-square-psi.vercel.app/',
         category: 'management',
         description: 'Complete school management with AI-powered tools.'
       },
       {
-        name: 'Employee Suite',
+        name: 'Employee Management System',
         link: '/solutions/employee-suite',
         category: 'hr',
         description: 'Manage hiring, tasks and payrolls efficiently.'
-      },
-      {
-        name: 'Recruitment AI',
-        link: '/solutions/recruitment-ai',
-        category: 'hr',
-        description: 'Smart candidate analysis and resume filtering.'
       },
       {
         name: 'Custom ERP Solution',
@@ -197,17 +192,17 @@ const Navbar: React.FC = () => {
 
     return (
       <div
-        className="fixed mt-24 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-5xl w-full bg-white shadow-2xl rounded-md border z-50 flex"
+        className="fixed mt-24 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-5xl w-full bg-white hover:text-blue-600 shadow-2xl rounded-md border z-50 flex"
         onMouseEnter={() => clearTimeout(timeoutRef.current!)}
         onMouseLeave={() => {
           timeoutRef.current = setTimeout(() => setVisible(false), 200);
         }}
       >
         <div className="w-1/4 border-r p-6">
-          <h4 className="text-sm font-semibold text-gray-800 mb-4">
+          <h4 className="text-sm font-semibold text-gray-800 mb-4 hover:text-blue-600">
             {dropdownData.categories[0].title}
           </h4>
-          <ul className="space-y-3 text-sm">
+          <ul className="space-y-3 text-sm hover:text-blue-600">
             {dropdownData.categories[0].filters.map((filter, index) => (
               <li key={index}>
                 <button
@@ -226,7 +221,7 @@ const Navbar: React.FC = () => {
           {filteredItems.map((item, index) => (
             <Link key={index} to={item.link} className="hover:text-blue-600">
               <div>
-                <h5 className="text-sm font-semibold text-gray-900 mb-1">{item.name}</h5>
+                <h5 className="text-sm font-semibold text-gray-900 hover:text-blue-600 mb-1">{item.name}</h5>
                 <p className="text-xs text-gray-600">{item.description}</p>
               </div>
             </Link>

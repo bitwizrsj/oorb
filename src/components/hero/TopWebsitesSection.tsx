@@ -12,7 +12,7 @@ const TopWebsitesSection = () => {
         {
             id: 1,
             name: "AMBIQ",
-            subtitle: "SUPERCHARGING ENDPOINT AI",
+            subtitle: "Shoes",
             image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=1920&h=1080&fit=crop",
             color: "from-blue-900 to-purple-900"
         },
